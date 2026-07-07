@@ -10,17 +10,111 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-pixel: var(--font-pixel);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  cursor: none !important;
+}
+
+.font-pixel {
+  font-family: var(--font-pixel), monospace;
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(52px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(52px) rotate(-360deg); }
+}
+
+/* Paper Noise Texture overlay */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+}
+
+/* 8-bit theme utilities */
+.pixel-border {
+  box-shadow: 
+    4px 0 0 0 var(--foreground), 
+    -4px 0 0 0 var(--foreground), 
+    0 -4px 0 0 var(--foreground), 
+    0 4px 0 0 var(--foreground);
+  border-radius: 0;
+}
+
+/* Custom WebKit Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e24; /* Dark track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666; /* Grey thumb */
+  border-radius: 6px;
+  border: 3px solid #1e1e24; /* Creates padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+/* Lenis Smooth Scroll Global Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Typing Animation */
+.typing-container {
+  display: inline-block;
+  overflow: hidden; /* Ensures the text is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  border-right: .15em solid white; /* The typwriter cursor */
+  margin: 0 auto;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
 }
