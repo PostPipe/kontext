@@ -382,7 +382,7 @@ export default function Home() {
 
                 {/* Windows Card — Active */}
                 <a
-                  href="/Kontext-Setup-1.0.0.exe"
+                  href="https://github.com/PostPipe/kontext/releases/download/kontext/Kontext-Setup-1.0.0.exe"
                   download
                   className="group relative flex flex-col items-center justify-center p-10 rounded-2xl bg-white border-2 border-black hover:bg-black transition-all duration-300 shadow-[6px_6px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:translate-x-1 hover:translate-y-1"
                 >
