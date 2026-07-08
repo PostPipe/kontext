@@ -70,7 +70,7 @@ export default function Home() {
                 {/* CTA row */}
                 <div className="flex flex-wrap gap-3 pointer-events-auto">
                   <a
-                    href="#download"
+                    href="#download-section"
                     className="flex items-center gap-2 px-5 py-2.5 bg-black text-white font-pixel text-[10px] uppercase
                                border-2 border-black shadow-[4px_4px_0_0_#555] hover:shadow-none 
                                hover:translate-x-1 hover:translate-y-1 transition-all duration-100"
@@ -78,12 +78,12 @@ export default function Home() {
                     ↓ Download
                   </a>
                   <a
-                    href="#docs"
+                    href="https://github.com/PostPipe/kontext" target='_blank'
                     className="flex items-center gap-2 px-5 py-2.5 bg-white text-black font-pixel text-[10px] uppercase
                                border-2 border-black shadow-[4px_4px_0_0_#ccc] hover:shadow-none 
                                hover:translate-x-1 hover:translate-y-1 transition-all duration-100"
                   >
-                    Read Docs →
+                    Star on Github →
                   </a>
                 </div>
 

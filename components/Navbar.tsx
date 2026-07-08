@@ -19,9 +19,9 @@ const NAV_ITEMS = [
     bgColor: "#dbeafe",
     textColor: "#000",
     links: [
-      { label: "PostPipe", ariaLabel: "PostPipe", href: "https://www.postpipe.in" },
-      { label: "LogJSON", ariaLabel: "LogJSON", href: "https://logjson.postpipe.in" },
-      { label: "Kontext", ariaLabel: "Kontext", href: "https://kontext.postpipe.in" },
+      { label: "PostPipe", ariaLabel: "PostPipe", href: "https://www.postpipe.in", target: "_blank" },
+      { label: "LogJSON", ariaLabel: "LogJSON", href: "https://logjson.postpipe.in", target: "_blank" },
+      { label: "Kontext", ariaLabel: "Kontext", href: "https://kontext.postpipe.in", target: "_blank" },
     ],
   },
   {
@@ -29,8 +29,8 @@ const NAV_ITEMS = [
     bgColor: "#dbeafe",
     textColor: "#000",
     links: [
-      { label: "GitHub", ariaLabel: "GitHub", href: "https://github.com/PostPipe" },
-      { label: "Instagram", ariaLabel: "Instagram", href: "https://www.instagram.com/postpipe.official" },
+      { label: "GitHub", ariaLabel: "GitHub", href: "https://github.com/PostPipe", target: "_blank" },
+      { label: "Instagram", ariaLabel: "Instagram", href: "https://www.instagram.com/postpipe.official", target: "_blank" },
       { label: "Contact", ariaLabel: "Contact", href: "#footer" },
     ],
   },
